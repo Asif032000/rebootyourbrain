@@ -27,15 +27,18 @@ GNU Screen, tmux, Byoby        --> terminal multiplexers ( multiple apps )
 
 source : https://www.computernetworkingnotes.com/linux-tutorials/how-to-enable-and-disable-root-login-in-ubuntu.html
 
-/enabling root account temporarily
+		/enabling root account temporarily
+
 sudo -i 
 
-exit      / disabling root account 
+
+exit     		 / disabling root account 
 
 
-// enabling root account for CLI 
+			// enabling root account for CLI 
 
-sudo -i passwd root 
+sudo -i passwd root
+	 
 sudo passwd -dl root   / disabling again 
 
 
@@ -65,7 +68,7 @@ sudo reboot -f
 
 
 
-                 # now to disable again , revert back the changes and do 
+                 # now to disable again , revert back the changes ,first do this: 
 sudo passwd -dl root 
 
 

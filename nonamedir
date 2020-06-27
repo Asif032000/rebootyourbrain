@@ -1,0 +1,16 @@
+
+//////problem 2 ///////////////////////////
+
+// creating directory and files without name
+
+mkdir " "
+touch " "
+
+
+// creating directory -okgoogle
+mkdir -p -- "-okgoogle"   
+or  
+mkdir -- "-okgoogle" 
+
+  // source:https://unix.stackexchange.com/questions/241228/creating-directory-with-space-in-name
+

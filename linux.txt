@@ -1,0 +1,76 @@
+slashreboot --> blog 
+
+github  -->  https://github.com/redashu/rebootbrain-2.0
+
+//////////////////////// Using Command Line for everything(not actually)///////
+
+source : https://www.linuxjournal.com/content/without-gui-how-live-entirely-terminal
+
+
+
+w3m-img  --> cli browser 
+alpine email --> email 
+finch        --> instant messaging 
+Wordgrinder  --> Word Processor 
+sc(spreadsheet calculator) --> Spreadsheets
+tpp(Text Presentation Program) --> Presentations 
+mc(Midnight Commander)         --> file manager
+cmus                           --> music player
+GNU Screen, tmux, Byoby        --> terminal multiplexers ( multiple apps ) 
+
+
+/////////////////////////////////////////////////////////////////////////  
+
+
+
+######################### root login enabling and disabling. #################################
+
+source : https://www.computernetworkingnotes.com/linux-tutorials/how-to-enable-and-disable-root-login-in-ubuntu.html
+
+/enabling root account temporarily
+sudo -i 
+
+exit      / disabling root account 
+
+
+// enabling root account for CLI 
+
+sudo -i passwd root 
+sudo passwd -dl root   / disabling again 
+
+
+//enabling root account for GUI :
+sudo -i passwd root 
+
+                         //we need to modify the files
+/etc/gdm3/custom.conf
+/etc/pam.d/gdm-password
+
+                         //take backup of these files 
+
+                         //open the file custom.conf and add these under [security]:
+AllowRoot=true
+
+
+                        //open file gdm-passwd file and add # in front of line : 
+
+auth  required pam_succeed_if.so user != root quit success
+
+  			// so it will look like this : 
+
+#auth required pam_succeed_if.so user !=root quiet_success
+
+			//now reboot system 
+sudo reboot -f 
+
+
+
+                 # now to disable again , revert back the changes and do 
+sudo passwd -dl root 
+
+
+          	-d  deletes the password 
+		-l is to lock the password  
+
+
+

@@ -80,3 +80,40 @@ sudo passwd -dl root
 
 
 
+
+
+
+////////////////////////////////////////////////////////////////////
+################# history command #################################
+/////////////////////////////////////////////////////////////////////
+
+history is a shell builtin not an executable file 
+
+                                          // limiting lines of history
+export HISTSIZE=3000
+
+					// HISTCONTROL variable controls what history is stored.
+
+
+					// excluding commands starting with space 
+
+export HISTCONTROL=$HISTCONTROL:ignorespace 
+
+					//avoid duplicate entries
+
+export HISTCONTROL=$HISTCONTROL:ignoresdups
+
+					// to apply above both 
+export HISTCONTROL=$HISTCONTROL:ignoreboth
+
+
+					// remove a command from history
+
+history -d lineno.
+
+e.g. history -d 445
+
+
+					// clear entire history session 
+history -c 
+

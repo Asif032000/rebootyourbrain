@@ -14,3 +14,8 @@ mkdir -- "-okgoogle"
 
   // source:https://unix.stackexchange.com/questions/241228/creating-directory-with-space-in-name
 
+
+////////////////problem 3 ////////////////////
+
+mkdir -p a/{b/{g/k,h/j},c/{i/j,j/l},d/{f/l,e/m}}/reboot.txt
+

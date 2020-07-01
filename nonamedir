@@ -19,3 +19,36 @@ mkdir -- "-okgoogle"
 
 mkdir -p a/{b/{g/k,h/j},c/{i/j,j/l},d/{f/l,e/m}}/reboot.txt
 
+
+
+//////////////  Problem 4 /////////////////////
+
+1> 
+
+//create two users jack and jill : 
+   
+   useradd jack 
+   useradd jill 
+
+2> 
+
+// login as jack                                            |    // login as jill 
+  							    |      
+ mkdir jack1 jack2       				    |    mkdir jill1 jill2 
+ vim jack.txt                 // enter the text in file     |    vim jill.txt   		// enter text in it 
+							    | 
+  // go to /home , and run 				    |    // go to /home , and run 
+							    |
+     setfacl -R -m u:jill:rwx jack    			    |    setfacl -R -m u:jack:rwx jill 
+
+3> 
+
+// login as jack					    | // login as jill 
+							    | 
+// go to /home/jill 					    | // go to /home/jack 
+							    |
+  mv jill1 $HOME  					    | mv jack1 $HOME 
+  mv jill2 $HOME 					    | mv jack2 $HOME 
+  mv jill.txt $HOME					    | mv jill.txt $HOME 
+
+   

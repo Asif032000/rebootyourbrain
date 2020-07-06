@@ -1,0 +1,79 @@
+///////////////////////////////////////////////////////////////////////
+####################### problem 7 #####################################
+///////////////////////////////////////////////////////////////////////
+
+problem #7 :    create a shell script 
+
+     create a shell script named /root/delvex.sh 
+      make sure it will run /bin/sh shell 
+      a user will be running this script my using a command name opensource
+     when a user  run like  "opensource  time" it must give current time only
+    when it runs like "opensource user"  it will give list of interactive shell users only
+     when run like "opensource 100"  it must print "Hello Delvex" 100 times in interval of 1 sec
+    if runs like  "opensource windows"  then it must shutdown OS
+    if run opensource command without any parameter  then it must show out --
+
+             i)   name of kernel 
+             ii)   version of kernel 
+             iii)  current date in the format of  /DD/MM/YY
+             iv)  name of OS 
+             v)   last reboot time 
+ 
+ Note:    each output for last option must be in a separate line 
+
+
+
+sol:
+
+                                                               #	create a file delvex.sh in /root/
+
+#!/bin/sh
+
+if [ "$1" == 'time' ]
+then
+     echo  `date +%T`
+elif [ "$1" == 'user' ]
+then
+     echo `users`
+
+elif [[ "$1" -eq 100 ]]
+then
+     python3 /root/delvex.py
+elif  [ "$1" == 'windows' ]
+then
+     shutdown now
+else
+  echo "kernel name : `uname` 
+        version:  `uname -v` 
+        date :  `date +%d/%m/%Y`  
+        osname:`cat /etc/os-release | grep PRETTY_NAME` 
+        `last reboot | head -1` "
+fi
+
+
+								#	create delvex.py in /root/
+								
+
+import time
+for i in range (101):
+    print("Hello Delvex")
+    time.sleep(1)
+
+
+
+
+								#	create file opensource in /usr/bin
+							
+#!/bin/sh 
+
+/root/delvex.sh $1
+
+
+								# 	give execution permissions to user 
+
+setfacl -m u:username:x /usr/bin/opensource
+setfacl -m u:username:x /root/ 
+setfacl -m u:username:x /root/delvex.sh
+setfacl -m u:username:x /root/delvex.py
+
+

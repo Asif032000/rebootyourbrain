@@ -2,6 +2,8 @@ slashreboot --> blog
 
 github  -->  https://github.com/redashu/rebootbrain-2.0
 
+commands  --> https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.3.0/com.ibm.zos.v2r3.bpxa500/lscmd.htm
+
 /////////////////////////////////////////////////////////////////////////////////
 //////////////////////// Using Command Line for everything(not actually)/////////
 /////////////////////////////////////////////////////////////////////////////////
@@ -117,6 +119,10 @@ e.g. history -d 445
 					// clear entire history session 
 history -c 
 
+  					// to stop keeping record of history
+set +o history 
+
+set -o history                          // to undo 
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -128,4 +134,26 @@ https://0xax.gitbooks.io/linux-insides/content/SysCall/linux-syscall-4.html
 
 https://blog.packagecloud.io/eng/2016/04/05/the-definitive-guide-to-linux-system-calls/
 
-https://opensource.com/article/19/10/strace
+https://opensource.com/article/19/10/strace  
+
+// systemcalls table 
+ 
+https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////
+////////////////// files and directories in one go /////////////////////
+////////////////////////////////////////////////////////////////////////
+
+https://stackoverflow.com/questions/17986615/one-command-to-create-a-directory-and-file-inside-it-linux-command#17986639
+
+
+
+////////////////////////////////////////////////////////////////////////
+##################  CHMOD #############################################
+//////////////////////////////////////////////////////////////////////
+
+https://linuxize.com/post/chmod-command-in-linux/

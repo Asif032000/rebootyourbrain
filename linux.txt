@@ -89,6 +89,8 @@ sudo passwd -dl root
 ################# history command #################################
 /////////////////////////////////////////////////////////////////////
 
+https://www.shellhacks.com/tune-command-line-history-bash/
+
 history is a shell builtin not an executable file 
 
                                           // limiting lines of history
@@ -122,7 +124,9 @@ history -c
   					// to stop keeping record of history
 set +o history 
 
-set -o history                          // to undo 
+set -o history                          // to undo
+
+ 
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -157,3 +161,22 @@ https://stackoverflow.com/questions/17986615/one-command-to-create-a-directory-a
 //////////////////////////////////////////////////////////////////////
 
 https://linuxize.com/post/chmod-command-in-linux/
+
+
+//////////////////////////////////////////////////////////////////////
+
+## Password related stuff like expiry etc is under /etc/login.defs  
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////  Showing only hidden files : ////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+ls -ap | grep -v / | egrep "^\."
+
+hidden directories: 
+
+ls -ap | egrep "^\..*/$"
+
+https://unix.stackexchange.com/questions/252165/how-to-show-only-hidden-directories-and-then-find-hidden-files-separately
+///////////////////////////////////////////////////////////////////////////////

@@ -180,3 +180,54 @@ ls -ap | egrep "^\..*/$"
 
 https://unix.stackexchange.com/questions/252165/how-to-show-only-hidden-directories-and-then-find-hidden-files-separately
 ///////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+############################# command line shortcuts #######################
+/////////////////////////////////////////////////////////////////////////////
+
+
+    Ctrl + L : Clear the Screen
+    Ctrl + W : Deete word starting at cursor
+    Ctrl + U : Clear the line
+    Ctrl + R : Search through previous run command
+    Ctrl + C : Cancel current running command
+    Ctrl + T : Swap last two character before cursor
+    Esc + T : Swap last two word before cursor
+    Ctrl + H : Delete letter starting at cursor
+
+source : https://github.com/kshitizsaini113/shell-scripting/blob/master/000_Quick_Introduction/005_Command_Line.md
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+##################### startup files ###########################################
+///////////////////////////////////////////////////////////////////////////////
+
+
+    /etc/profile -> Systemwide initialization file, executed for login shells.
+    /etc/bash.bashrc -> Systemwide shell startup file.
+    /etc/bash.logout -> Systemwide shell cleanup file.
+    $HOME/.bash_profile -> Personal initialization file.
+    $HOME/.bashrc -> Pre-interactive shell startup file.
+    $HOME/.bash_logout -> Individual login shell cleanup file.
+    $HOME/.inputrc -> Individual readline initialization file.
+
+
+
+
+///////////////////////////////////////////////////////////////////
+##################### order of file execution on start up #########
+//////////////////////////////////////////////////////////////////
+
+For login shell: 
+	
+	/etc/profile --> $HOME/.bash_profile --> $HOME/.bashrc --> /etc/bashrc
+
+Non-login shell: 
+
+	$HOME/.bashrc --> /etc/bash.bashrc --> /etc/profile.d
+
+On logout : 
+
+	$HOME/.bash_logout

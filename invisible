@@ -1,0 +1,5 @@
+### Making input invisible 
+
+
+ stty -echo     # makes input invisible 
+ stty echo      # to default 
